@@ -5,6 +5,8 @@ def div_1_to_20(divided):
   while( divisor >= 11):
     if( divided % divisor != 0):
       return False
+
+    divisor -= 1
   
   return True
 
