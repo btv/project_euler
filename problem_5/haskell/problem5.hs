@@ -11,5 +11,7 @@ divisible_1_to_20 n
   | mod n 11 /= 0 = False
   | otherwise = True
 
-
-problem5 = until (divisible_1_to_20) (+2) 2520
+-- solved this by the help on this URL:
+-- http://basildoncoder.com/blog/2008/06/10/project-euler-problem-5/
+-- by increaing the loop from 2 to 2520, problem solves in seconds
+problem5 = until (divisible_1_to_20) (+2520) 2520
