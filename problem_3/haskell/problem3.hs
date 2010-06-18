@@ -1,4 +1,5 @@
 import Data.List
+import Data.Tuple
 
 zero_mod divisor
   | divide == 0 = True 
