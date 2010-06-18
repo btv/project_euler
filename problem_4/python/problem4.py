@@ -5,7 +5,7 @@ def is_palindrome(number):
   count = 1
 
   while count <= half:
-    if number[count] != number[-1 * count]:
+    if number[count - 1] != number[-1 * count]:
       return False
 
     count += 1
