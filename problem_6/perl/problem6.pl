@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 
-use List::Util qw(sum);
-
 my $sum1;
 my $sum2;
 
