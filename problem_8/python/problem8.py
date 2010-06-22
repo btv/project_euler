@@ -27,9 +27,28 @@ def main():
   digit_list_length = len(digit_list)
 
   while index < digit_list_length:
-    if digit_list[index] == 9:
+    if digit_list[index] == 0:
+      temp_product = 0
+    elif index == 0:
+      temp_product = digit_list[index] * digit_list[index + 1] * \
+                     digit_list[index + 2] * digit_list[index + 3] * \
+                     digit_list[index + 4]
+    elif index == 1:
+      temp_product = digit_list[index - 1]* digit_list[index] * \
+                     digit_list[index + 1] * digit_list[index + 2] * \
+                     digit_list[index + 3]
+    elif index == 999:
+      temp_product = digit_list[index] * digit_list[index - 1] * \
+                     digit_list[index - 2] * digit_list[index - 3] * \
+                     digit_list[index - 4]
+    elif index == 998:
+      temp_product = digit_list[index + 1]* digit_list[index] * \
+                     digit_list[index - 1] * digit_list[index - 2] * \
+                     digit_list[index - 3]
+    else:
       temp_product = productOf5(digit_list, index)
-      if temp_product > high_score:
+
+    if temp_product > high_score:
         high_score = temp_product
 
     index += 1
