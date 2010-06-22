@@ -22,8 +22,7 @@ def is_prime(divided):
   return True
 
 def main():
-  prime_list = filter(is_prime, range(3,2000000+1, +2))
-  print sum(prime_list)
+  print sum(filter(is_prime, range(3,2000000+1, +2)))
 
 
 if __name__ == "__main__":
