@@ -27,11 +27,12 @@ def main():
   count_right = 1
 
   flip = True
+  end = False
 
-  while count_right < 1000:
+  while end == False:
     result = pythagorianTriple(count_left, count_right) 
     if result[1] == True:
-      if equal1000(count_left, count_right,result[2]):
+      if equal1000(count_left, count_right,result[2]) == True:
         print "%d + %d + %d = 1000" % (count_left, count_right, result[2])
         end = True
 
