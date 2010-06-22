@@ -27,10 +27,8 @@ def main():
   count_right = 1
 
   flip = True
-  end = False
 
-
-  while end == False:
+  while count_right < 1000:
     result = pythagorianTriple(count_left, count_right) 
     if result[1] == True:
       if equal1000(count_left, count_right,result[2]):
