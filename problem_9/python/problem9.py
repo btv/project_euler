@@ -27,20 +27,21 @@ def main():
   count_right = 1
 
   flip = True
-  end = False
 
-  while end == False:
-    result = pythagorianTriple(count_left, count_right) 
-    if result[1] == True:
-      if equal1000(count_left, count_right,result[2]) == True:
-        print "%d + %d + %d = 1000" % (count_left, count_right, result[2])
+  while count_right <= 500:
+    result = pythagorianTriple(count_left, count_right)
+    if result[0] == True:
+      print "%d:%d:%d" % (count_left, count_right, \
+	result[1])
+      if equal1000(count_left, count_right,result[1]) == True:
+        print "%d + %d + %d = 1000" % (count_left, count_right, result[1])
         end = True
 
     if flip == True:
-      count_left += 1
+      count_right += 1
       flip = flip ^ 1
     else:
-      count_right += 1
+      count_left += 1
       flip = flip ^ 1
 
 
