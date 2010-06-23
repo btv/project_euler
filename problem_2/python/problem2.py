@@ -2,7 +2,7 @@
 
 def fibinaci_list( in_list, input1, input2):
   flip = True
-  while ( input1 < 4000000 or input2 < 4000000):
+  while ( input1 + input2 < 4000000):
     if( flip == True):
       input1 = input1 + input2
       in_list.append(input1)
