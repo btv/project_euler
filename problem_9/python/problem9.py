@@ -16,8 +16,8 @@ def pythagorianTriple(a,b):
   if the square root of a^2 + b^2 mod'ed = 0, we have something.
   """
   temp_sqrt = math.sqrt(a * a + b * b)
-  if temp_sqrt % 1 == 0.0:
-    return (True, temp_sqrt)
+  if int(temp_sqrt % 1) == 0:
+    return (True, int(temp_sqrt))
   else:
     return (False, 0)
 
@@ -31,8 +31,6 @@ def main():
   while count_right <= 500:
     result = pythagorianTriple(count_left, count_right)
     if result[0] == True:
-      print "%d:%d:%d" % (count_left, count_right, \
-	result[1])
       if equal1000(count_left, count_right,result[1]) == True:
         print "%d + %d + %d = 1000" % (count_left, count_right, result[1])
         end = True
