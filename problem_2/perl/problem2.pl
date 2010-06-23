@@ -1,36 +1,31 @@
 #!/usr/bin/perl
 
-use List::Util qw(sum);
+my $total = 0;
+my $count1 = 0;
+my $count2 = 1;
+my $flip = 1;
 
-sub fibinaci
+while( $count2 + $count1 < 4000000)
 {
-  my (@array, $input1, $input2) = @_;
-
-  my $flip = 1;
-
-  while ( $input1 + $input2 < 4000000)
+  if ( $flip == 1)
   {
-    if ( $flip == 1)
+    $count1 += $count2;
+    if ( $count1 % 2 == 0)
     {
-      $input1 += $input2;
-      if ( $input1 % 2 == 0)
-      {
-        push(@array, $input1);
-      }
-      $flip = 0;
+      $total += $count1;
     }
-    else
+    $flip = 0;
+  }
+  else
+  {
+    $count2 += $count1;
+    if ( $count2 % 2 == 0)
     {
-      $input2 += $input1;
-      if ( $input2 % 2 == 0)
-      {
-        push(@array, $input2);
-      }
-      $flip = 1;
+      $total += $count2;
     }
+    $flip = 1;
   }
 }
 
-my @array;
-fibinaci(\@array, 0 , 1);
-print sum @array;
+print $total;
+
