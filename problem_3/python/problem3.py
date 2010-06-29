@@ -29,8 +29,7 @@ def is_prime(divided):
 def main():
   first_list = filter(zero_mod, range(3, sqrt_top + 1, 2))
   second_list = map(is_prime, first_list)
-  third_list = max(zip(second_list, first_list))
-  print "%s" % third_list[-1] 
+  print "%s" % max(zip(second_list, first_list))[-1] 
 
 
 if __name__ == "__main__":
