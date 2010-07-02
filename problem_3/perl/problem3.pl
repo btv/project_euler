@@ -21,7 +21,7 @@ sub is_prime
     $divisor += 2;
   }
 
-  return 1;
+  1;
 }
 
 my @f;
