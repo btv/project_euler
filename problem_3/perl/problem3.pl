@@ -4,16 +4,7 @@ use strict;
 use warnings;
 
 my $top_number = 600851475143;
-my $sqrt_top = sqrt($top_number);
-
-sub zero_mod
-{
-  my ($divisor) = @_;
-
-  return 1 if ( $top_number % $divisor == 0 );
-  return 0;
-}
-
+my $sqrt_top = int(sqrt($top_number));
 
 sub is_prime
 {
@@ -34,11 +25,30 @@ sub is_prime
   }while($divisor <= $sqrt_divided);
 }
 
-my @first_array = grep zero_mod($_), 1..$top_number;
-my @second_array = grep is_prime($_), @first_array;
+my @f;
+my $i;
+my $rest= $top_number;
 
-foreach(@second_array)
+#for( $i = 1; $i < $rest; $i++)
+#{
+#  unless ($top_number % $i)
+#  {
+#    push @f, $i;
+#    $rest = $top_number/$i;
+#  }
+#}
+
+for( $i = 1; $i < $top_number; $i++)
+{
+  unless ($top_number % $i)
+  {
+    push @f, $i;
+  }
+}
+
+#my @g = grep is_prime($_), @f;
+
+foreach(@f)
 {
   print $_;
 }
-  
