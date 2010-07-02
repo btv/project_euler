@@ -2,7 +2,6 @@
 
 use strict;
 use warnings;
-use List::Util;
 
 my $top_number = 600851475143;
 my $sqrt_top = int(sqrt($top_number));
