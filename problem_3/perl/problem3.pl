@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use List::Util;
 
 my $top_number = 600851475143;
 my $sqrt_top = int(sqrt($top_number));
@@ -9,46 +10,31 @@ my $sqrt_top = int(sqrt($top_number));
 sub is_prime
 {
   my ($divided) = @_;
-
-  my $divisor = 3;
-  
   return 1 if ($divided == 1);
 
+  my $divisor = 3;
   my $sqrt_divided = sqrt($divided);
 
-  do
+  while($divisor <= $sqrt_divided)
   {
-    return 1 if ($divided == $divisor);
-    return 0 if ($divided % $divisor == 0);
-
+    return 0 unless ($divided % $divisor);
     $divisor += 2;
-  }while($divisor <= $sqrt_divided);
+  }
+
+  return 1;
 }
 
 my @f;
-my $i;
-my $rest= $top_number;
 
-#for( $i = 1; $i < $rest; $i++)
-#{
-#  unless ($top_number % $i)
-#  {
-#    push @f, $i;
-#    $rest = $top_number/$i;
-#  }
-#}
-
-for( $i = 1; $i < $top_number; $i++)
+for(my $i = 1; $i < $sqrt_top; $i++)
 {
   unless ($top_number % $i)
   {
-    push @f, $i;
+    if (is_prime($i))
+    {
+      push @f, $i;
+    }
   }
 }
 
-#my @g = grep is_prime($_), @f;
-
-foreach(@f)
-{
-  print $_;
-}
+print $f[-1];
