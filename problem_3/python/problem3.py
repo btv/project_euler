@@ -3,7 +3,6 @@
 import math
 
 top_number = 600851475143
-sqrt_top = int(math.sqrt(top_number))
 
 def zero_mod(divisor):
   if top_number % divisor == 0:
