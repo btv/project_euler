@@ -27,7 +27,19 @@ def is_prime(divided):
     return True
 
 def main():
-  first_list = filter(zero_mod, range(3, sqrt_top + 1, 2))
+  count = 3
+  go_to = top_number
+
+  first_list =[]
+
+  while count <= go_to:
+    if zero_mod(count):
+      first_list.append(count)
+      go_to = top_number / count
+      first_list.append(go_to)
+
+    count += 2
+
   second_list = map(is_prime, first_list)
   print "%s" % max(zip(second_list, first_list))[-1] 
 
