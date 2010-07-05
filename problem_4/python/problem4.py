@@ -14,6 +14,10 @@ def is_palindrome(number):
   return True
 
 def int_to_list(number):
+  """
+  Code goes through a number, digit by digit, and turns it into a list.
+  I got the code off StackOverflow.
+  """
   local_list = []
   while number:
     digit = number % 10
@@ -22,26 +26,20 @@ def int_to_list(number):
 
   return local_list
 
-
-def main():
+if __name__ == "__main__":
   first_list = range(100,1000)
   first_list.reverse()
 
-  count1 = 0
-  count2= 0
+  count1 = count2 = 0
   flag = False
 
   while flag == False:
-    product = int(first_list[count1] * first_list[count2])
+    product = first_list[count1] * first_list[count2]
     if is_palindrome(product):
       print "%s" % (product)
       flag = True
-    else:
-      count1 += 1
-      if count1 >= 900:
-        count2 += 1
-        count1 = count2 
-
-
-if __name__ == "__main__":
-  main()
+      
+    count1 += 1
+    if count1 >= 900:
+      count2 += 1
+      count1 = count2 
