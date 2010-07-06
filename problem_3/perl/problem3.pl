@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 my $top_number = 600851475143;
-my $sqrt_top = int(sqrt($top_number));
 
 sub is_prime
 {
@@ -24,8 +23,9 @@ sub is_prime
 }
 
 my @f;
+my $new_top = $top_number;
 
-for(my $i = 1; $i < $sqrt_top; $i++)
+for(my $i = 3; $i <= $new_top; $i += 2)
 {
   unless ($top_number % $i)
   {
@@ -34,6 +34,7 @@ for(my $i = 1; $i < $sqrt_top; $i++)
       push @f, $i;
     }
   }
+    $new_top = $top_number / $i;
 }
 
 print $f[-1];
