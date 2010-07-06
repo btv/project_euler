@@ -24,6 +24,6 @@ is_prime :: Integer -> Bool
 is_prime input = prime 3 input
 
 main :: IO ()
-main = print . snd $ maximum (zip y x)
+main = print . snd . maximum $ zip y x
   where x = factors 3 600851475143
         y = map is_prime x
