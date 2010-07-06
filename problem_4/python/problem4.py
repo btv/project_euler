@@ -31,13 +31,12 @@ if __name__ == "__main__":
   first_list.reverse()
 
   count1 = count2 = 0
-  flag = False
 
-  while flag == False:
+  while True:
     product = first_list[count1] * first_list[count2]
     if is_palindrome(product):
       print "%s" % (product)
-      flag = True
+      break
       
     count1 += 1
     if count1 >= 900:
