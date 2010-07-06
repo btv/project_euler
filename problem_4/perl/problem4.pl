@@ -26,30 +26,28 @@ sub is_palimdrone
   return 1;
 }
 
-my $flag = 0;
 my $o;
 my $product;
+my @palimdromes;
+my $flag = 0;
 
-while( $flag == 0) 
+for (my $n = 1000; $n >= 100; $n -= 1)
 {
-   for my $n (1000..100)
-   {
-      while ( $o <= 100)
-      {
-       $o = $n;
-       my $product = $o * $n;
-       print $product;
-       if (is_palimdrone($product))
-       {
-         print $product;
-         $flag = 1;
-         last;
-       }
+  $o = $n;
+  while ( $o >= 100)
+  {
+    $product = $o * $n;
+    if (is_palimdrone($product))
+    {
+      print "$product\n";
+      $flag = 1;
+      last;
+    }
 
-       $o -= 1;
-        
-      }
+    $o -= 1;
 
-   }
+  }
+
+  last if ($flag == 1);
+
 }
-
