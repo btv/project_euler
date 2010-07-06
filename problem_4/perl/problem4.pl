@@ -9,7 +9,7 @@ sub is_palimdrone
 {
   my ($number) = @_;
 
-  my $digits = split(//, $number);
+  my @digits = split(//, $number);
 
   my $half = @digits / 2;
 
