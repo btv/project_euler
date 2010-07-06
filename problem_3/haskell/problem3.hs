@@ -4,7 +4,7 @@ factors count top_number
   | count >= top_number = []
   | zero_mod count = count : new_top: factors (count + 2) new_top
   | otherwise = factors (count + 2) top_number
-  where new_top = round . fromIntegral $ top_number `div` count
+  where new_top = top_number `div` count
 
 zero_mod divisor
   | divide == 0 = True 
@@ -24,7 +24,6 @@ is_prime :: Integer -> Bool
 is_prime input = prime 3 input
 
 main :: IO ()
-main = do
-       let x = factors 3 600851475143
-       let y = map is_prime x
-       putStrLn $ show $ snd $  maximum ( zip y x)
+main = print . snd $ maximum (zip y x)
+  where x = factors 3 600851475143
+        y = map is_prime x
