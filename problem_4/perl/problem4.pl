@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-# @digits = split(//, $inputline);
-
 sub is_palimdrone
 {
   my ($number) = @_;
@@ -27,3 +25,31 @@ sub is_palimdrone
 
   return 1;
 }
+
+my $flag = 0;
+my $o;
+my $product;
+
+while( $flag == 0) 
+{
+   for my $n (1000..100)
+   {
+      while ( $o <= 100)
+      {
+       $o = $n;
+       my $product = $o * $n;
+       print $product;
+       if (is_palimdrone($product))
+       {
+         print $product;
+         $flag = 1;
+         last;
+       }
+
+       $o -= 1;
+        
+      }
+
+   }
+}
+
