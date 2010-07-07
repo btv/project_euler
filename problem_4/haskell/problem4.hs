@@ -8,7 +8,9 @@ import Data.List
 numberToList = reverse . unfoldr (\x -> if x == 0 then Nothing else let (a,b) = x `quotRem` 10 in Just (b,a))
 
 numberToList' 0 = []
-numberToList' number = reverse . unfoldr (mod number 10 : numberToList' (quot number 10)) 
+numberToList' number = mod_num : numberToList remining
+  where remining = quot number 10
+        mod_num = mod number 10
 
 
 --main :: IO ()
