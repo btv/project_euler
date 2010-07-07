@@ -5,10 +5,7 @@ import math
 top_number = 600851475143
 
 def zero_mod(divisor):
-  if top_number % divisor == 0:
-    return True
-  else:
-    return False
+  return top_number % divisor == 0
 
 def is_prime(divided):
   divisor = 3
