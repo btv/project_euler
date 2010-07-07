@@ -14,17 +14,7 @@ def is_palindrome(number):
   return True
 
 def int_to_list(number):
-  """
-  Code goes through a number, digit by digit, and turns it into a list.
-  I got the code off StackOverflow.
-  """
-  local_list = []
-  while number:
-    digit = number % 10
-    local_list.append(digit)
-    number /= 10
-
-  return local_list
+  return map(int, list(str(number)))
 
 if __name__ == "__main__":
   first_list = range(100,1000)
