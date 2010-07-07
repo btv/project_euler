@@ -14,7 +14,7 @@ def is_palindrome(number):
   return True
 
 def int_to_list(number):
-  return map(int, list(str(number)))
+  return map(int, str(number))
 
 if __name__ == "__main__":
   first_list = range(100,1000)
