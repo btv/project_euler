@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+def int_to_list(number):
+  return map(int, str(number))
+
 def is_palindrome(number):
   local_list = int_to_list(number)
   half = int(.5 * len(local_list))
@@ -12,9 +15,6 @@ def is_palindrome(number):
     count += 1
 
   return True
-
-def int_to_list(number):
-  return map(int, str(number))
 
 if __name__ == "__main__":
   first_list = range(100,1000)
