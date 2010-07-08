@@ -13,4 +13,4 @@ is_palimdrome number = num_list == reverse num_list
 main :: IO ()
 main = print . maximum . filter is_palimdrome $ zipWith (*) y z
   where y = [1000,999..100]
-  	z = [1000,999..100]
+        z = [1000,999..100]
