@@ -11,7 +11,7 @@ sub is_palimdrone
   my @digits = split(//, $number);
   my @reversed_digits = reverse(@digits);
 
-  # got this code from:
+  # got this code idea from, I've modified it slightly:
   # http://perl.active-venture.com/pod/perlfaq4-dataarrays.html
   for (my $i = 0; $i < @digits; $i++)
   {
@@ -20,8 +20,6 @@ sub is_palimdrone
 
   return 1;
 }
-
-my $product;
 
 my @two = my @one = reverse((1..1000));
 
