@@ -25,13 +25,13 @@ my $product;
 
 my @two = my @one = reverse((1..1000));
 
-my @join = pairwise { $one * $two } @one, @two;
+my @join = pairwise { $a * $b } @one, @two;
 
 foreach(@join)
 {
   if ( is_palimdrone($_))
   {
-    print "$_";
+    print "$_\n";
     last;
   }
 }
