@@ -5,31 +5,13 @@ def int_to_list(number):
 
 def is_palindrome(number):
   local_list = int_to_list(number)
-  half = int(.5 * len(local_list))
-  count = 1
-
-  while count <= half:
-    if local_list[count - 1] != local_list[-1 * count]:
-      return False
-
-    count += 1
-
-  return True
+  return local_list == list(reversed(local_list))
 
 if __name__ == "__main__":
-  first_list = range(100,1000)
+  second_list = first_list = range(100,1000+1)
   first_list.reverse()
+  second_list.reverse()
+  prod_set = set(map(lambda i,j: i*j, first_list, second_list))
 
-  count1 = count2 = 0
-  flag = False
 
-  while flag == False:
-    product = first_list[count1] * first_list[count2]
-    if is_palindrome(product):
-      print "%s" % (product)
-      flag = True
-      
-    count1 += 1
-    if count1 >= 900:
-      count2 += 1
-      count1 = count2 
+  print "%s" % max(filter(is_palindrome,prod_set))
