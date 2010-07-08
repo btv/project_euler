@@ -2,52 +2,37 @@
 
 use strict;
 use warnings;
+use List::MoreUtils qw(pairwise);
 
 sub is_palimdrone
 {
   my ($number) = @_;
 
   my @digits = split(//, $number);
+  my @reversed_digits = reverse(@digits);
 
-  my $half = @digits / 2;
-
-  my $count = 1;
-
-  while( $count <= $half)
+  # got this code from:
+  # http://perl.active-venture.com/pod/perlfaq4-dataarrays.html
+  for (my $i = 0; $i < @digits; $i++)
   {
-    unless ($digits[$count -1] == $digits[-1 * $count])
-    {
-      return 0;
-    }
-
-    $count += 1;
+    return 0 if $digits[$i] != $reversed_digits[$i];
   }
 
   return 1;
 }
 
-my $o;
 my $product;
-my @palimdromes;
-my $flag = 0;
 
-for (my $n = 1000; $n >= 100; $n -= 1)
+my @two = my @one = reverse((1..1000));
+
+my @join = pairwise { $one * $two } @one, @two;
+
+foreach(@join)
 {
-  $o = $n;
-  while ( $o >= 100)
+  if ( is_palimdrone($_))
   {
-    $product = $o * $n;
-    if (is_palimdrone($product))
-    {
-      print "$product\n";
-      $flag = 1;
-      last;
-    }
-
-    $o -= 1;
-
+    print "$_";
+    last;
   }
-
-  last if ($flag == 1);
-
 }
+
