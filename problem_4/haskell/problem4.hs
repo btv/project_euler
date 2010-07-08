@@ -4,13 +4,14 @@ import Data.List
 
 --Stole numberToList code from:
 --http://www.rhinocerus.net/forum/lang-functional/95473-converting-number-list-haskell.html
---Need to learn about Haskell in order to learn how it works.
 numberToList = reverse . unfoldr (\x -> if x == 0 then Nothing else let (a,b) = x `quotRem` 10 in Just (b,a))
 
-numberToList' 0 = []
-numberToList' number = mod_num : numberToList remining
-  where remining = quot number 10
-        mod_num = mod number 10
+is_palimdrome number = num_list == reverse num_list
+  where
+    num_list = numberToList number
 
-
---main :: IO ()
+main :: IO ()
+main = print . maximum $ filter is_palimdrome x
+  where y = [1000,999..100]
+        z = [1000,999..100]
+        x = zipWith (*) y z
