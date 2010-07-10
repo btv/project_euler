@@ -11,6 +11,5 @@ is_palimdrome number = num_list == reverse num_list
     num_list = numberToList number
 
 main :: IO ()
-main = print . maximum . filter is_palimdrome $ zipWith (*) y z
-  where y = [1000,999..100]
-        z = [1000,999..100]
+main = print . maximum $ [ x * y | x <- nums, y <- nums, is_palimdrome (x * y)] 
+  where nums = [1000,999..100]
