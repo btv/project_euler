@@ -7,8 +7,10 @@ def is_palindrome(number):
   local_list = int_to_list(number)
   return local_list == list(reversed(local_list))
 
-if __name__ == "__main__":
-  second_list = first_list = list(reversed(range(100,1000+1)))
-  prod_set = map(lambda i,j: i*j, first_list, second_list)
+def is_palindrome2(number):
+  return str(number) == str(number)[::-1]
 
-  print "%s" % max(filter(is_palindrome,prod_set))
+if __name__ == "__main__":
+  print "%s" % max([x * y for x in range(1000,100, -1) \
+                          for  y  in range(1000,100,-1) \
+                          if is_palindrome(x * y)])
