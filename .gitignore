@@ -1,0 +1,6 @@
+# any compiled haskell stuff
+*.hi
+*.o
+
+# any vim swap files currently in use
+*.swp
