@@ -17,4 +17,3 @@ if __name__ == "__main__":
     count += 2520
 
   print "%s" % count
-
