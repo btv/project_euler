@@ -18,8 +18,7 @@ def is_prime(divided):
         divisor += 2
     return True
 
-
-def main():
+if __name__ == "__main__":
   prime_list = [2]
   count = 3
 
@@ -32,7 +31,3 @@ def main():
     count += 2
 
   print prime_list[-1]
-
-
-if __name__ == "__main__":
-  main()
