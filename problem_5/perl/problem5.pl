@@ -3,12 +3,10 @@
 sub divide_11_to_20
 {
   my ( $divided ) = @_;
-  my $count = 20;
 
-  while( $count >= 11 )
+  foreach (11..20)
   {
-     return 0 if ($divided % $count);
-     $count--;
+     return 0 if ($divided % $_);
   }
 
   return 1;
