@@ -2,5 +2,8 @@
 *.hi
 *.o
 
+# any java class files
+*.class
+
 # any vim swap files currently in use
 *.swp

@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-my $sum1;
-my $sum2;
+my $sum1 = 0;
+my $sum2 = 0;
 
 for $n (1..100)
 {
@@ -9,4 +9,4 @@ for $n (1..100)
   $sum2 += $n * $n;
 }
 
-print ($sum1 * $sum1 - $sum2);
+print ($sum1 * $sum1 - $sum2); 
