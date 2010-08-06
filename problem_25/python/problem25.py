@@ -1,4 +1,5 @@
 #!/usr/bin/python
+"""Solution for problem 25."""
 
 def fibinaci_generator():
   flip = True
