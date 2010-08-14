@@ -19,7 +19,7 @@ def is_prime(divided):
     return True
 
 if __name__ == "__main__":
-  prime_list = [2]
+  prime_list = [1,2]
   count = 3
 
   # 2 is the first prime, since we're starting at 1, reducing the search
