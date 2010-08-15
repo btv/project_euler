@@ -1,4 +1,5 @@
 #!/usr/bin/python
+"""Python solution for Project Euler problem #14."""
 
 def sequence(number):
   tmp_list = [number]
