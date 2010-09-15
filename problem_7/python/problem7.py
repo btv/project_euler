@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import math
 
@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     count += 2
 
-  print prime_list[-1]
+  print(prime_list[-1])

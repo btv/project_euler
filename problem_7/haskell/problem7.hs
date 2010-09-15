@@ -1,7 +1,5 @@
 module Main where
 
-import Data.List
-
 prime divisor divided
   | divisor > sqrt_divided = [divided]
   | mod divided divisor == 0 = []
@@ -11,4 +9,4 @@ prime divisor divided
 
 main :: IO ()
 main = print $ primes !! 10000
-  where primes = 2 : [x | x <- [3,5..],  prime 3 x /= []]
+  where primes = 2 : [ x | x <- [3,5..],  prime 3 x /= [] ]
