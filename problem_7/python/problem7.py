@@ -13,7 +13,7 @@ def is_prime(divided):
   return True
 
 if __name__ == "__main__":
-  prime_list = [2]
+  prime_list = [1,2]
   count = 3
 
   while len(prime_list) < 10001:
