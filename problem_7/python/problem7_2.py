@@ -12,14 +12,17 @@ def is_prime(divided):
     divisor += 2
   return True
 
+
 if __name__ == "__main__":
-  prime_list = [1,2]
-  count = 3
+  count = 1 #to substitute the prime number 2 in the example
+  last = 0
+  iterator = 3
 
-  while len(prime_list) < 10001:
-    if is_prime(count) == True:
-      prime_list.append(count)
+  while count < 10001:
+    if is_prime(iterator):
+      count += 1
+      last = iterator
 
-    count += 2
+    iterator += 2
 
-  print prime_list[-1]
+  print(last)
