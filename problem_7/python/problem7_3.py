@@ -4,7 +4,7 @@ import math
 
 def is_prime(divided):
   divisor = 3
-  sqrt_divided = math.sqrt(divided)
+  sqrt_divided = int(math.sqrt(divided))
   while divisor <= sqrt_divided:
     if divided % divisor == 0:
       return False
