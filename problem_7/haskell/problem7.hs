@@ -1,6 +1,6 @@
 module Main where
 
-prime_wrapper divisor divided = prime divisor divided (round . sqrt. fromIntegral $ divided)
+prime_wrapper divided = prime 3 divided (round . sqrt. fromIntegral $ divided)
 
 prime divisor divided sqrt_divided
   | divisor > sqrt_divided = [divided]
@@ -10,4 +10,4 @@ prime divisor divided sqrt_divided
 
 main :: IO ()
 main = print $ primes !! 10000
-  where primes = 2 : [ x | x <- [3,5..],  prime_wrapper 3 x /= [] ]
+  where primes = 2 : [ x | x <- [3,5..],  prime_wrapper x /= [] ]
