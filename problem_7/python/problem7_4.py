@@ -3,13 +3,13 @@
 import math
 
 def is_prime(divided):
-  divisor = 3
+  divisor = [3]
   sqrt_divided = int(math.sqrt(divided))
-  while divisor <= sqrt_divided:
-    if divided % divisor == 0:
+  while divisor[0] <= sqrt_divided:
+    if divided % divisor[0] == 0:
       return False
 
-    divisor += 2
+    divisor[0] += 2
   return True
 
 
