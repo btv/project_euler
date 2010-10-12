@@ -6,7 +6,7 @@ def fibinaci_generator():
   second = 1
   while True:
     next = first + second
-    if len(str(next)) == 4:
+    if len(str(next)) == 5:
       return next
     first = second
     second = next

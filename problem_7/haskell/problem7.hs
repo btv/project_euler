@@ -1,7 +1,9 @@
 module Main where
 
+prime_wrapper:: Int -> [Int]
 prime_wrapper divided = prime 3 divided (round . sqrt. fromIntegral $ divided)
 
+prime:: Int -> Int -> Int -> [Int]
 prime divisor divided sqrt_divided
   | divisor > sqrt_divided = [divided]
   | mod divided divisor == 0 = []
