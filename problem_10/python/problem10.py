@@ -4,26 +4,16 @@ Python based code solution to problem 10 of project euler.
 """
 import math
 
-# code copied from problem 3
 def is_prime(divided):
   divisor = 3
-  sqrt_divided = math.sqrt(divided)
-#  if divided == 1:
-#    return True
-#  else:
+  sqrt_divided = int(math.sqrt(divided))
   while divisor <= sqrt_divided:
-    if divided == divisor:
-      return True
-    elif divided % divisor == 0:
+    if divided % divisor == 0:
       return False
-    else:
-      divisor += 2
+
+    divisor += 2
 
   return True
 
-def main():
-  print sum(filter(is_prime, range(3,2000000+1, +2)))
-
-
 if __name__ == "__main__":
-  main()
+  print sum([2] + [x for x in range(3,2000000+1, +2) if is_prime(x)])
