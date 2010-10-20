@@ -1,8 +1,12 @@
-module Main where
+--module Main where
 
-get_div_len number = length $ [ x | x <- [1..number] , number % x == 0]
+import Data.Char
 
-main :: IO()
-main = do
-  let triangle = 28
-  let iterator = 7
+get_div_len number = length $ [ y | y <- [1..top] , number `mod` y == 0]
+  where top = triangle number
+
+triangle num = sum(map digitToInt $ show num)
+
+--main :: IO()
+--main = do
+--  print $ triangle $ head [ x | x <- [1..], (get_div_len x) >= 100] 
