@@ -14,5 +14,4 @@ while get_divisors(triangle_num) <= 500:
   iterator += 1
   triangle_num += iterator
 
-
 print triangle_num
