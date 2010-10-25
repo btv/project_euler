@@ -1,14 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 code solution for Euler Project #8
 """
 
+import operator
+from functools import reduce
+
 def int_to_list(number):
     return [int(digits) for digits in str(number)]
-
-def productOf5(int_list, index):
-    return int_list[index - 2] * int_list[index - 1] * int_list[index] * \
-           int_list[index + 1] * int_list[index + 2]
 
 if __name__ == "__main__":
   index = 0
@@ -21,27 +20,23 @@ if __name__ == "__main__":
 
   while index < digit_list_length:
     if index == 0:
-      temp_product = digit_list[index] * digit_list[index + 1] * \
-                     digit_list[index + 2] * digit_list[index + 3] * \
-                     digit_list[index + 4]
+      temp_product = reduce(operator.mul, digit_list[index : index + 4])
+
     elif index == 1:
-      temp_product = digit_list[index - 1]* digit_list[index] * \
-                     digit_list[index + 1] * digit_list[index + 2] * \
-                     digit_list[index + 3]
+      temp_product = reduce(operator.mul, digit_list[index -1 : index + 3])
+
     elif index == 999:
-      temp_product = digit_list[index] * digit_list[index - 1] * \
-                     digit_list[index - 2] * digit_list[index - 3] * \
-                     digit_list[index - 4]
+      temp_product = reduce(operator.mul, digit_list[index -4 : index])
+    
     elif index == 998:
-      temp_product = digit_list[index + 1]* digit_list[index] * \
-                     digit_list[index - 1] * digit_list[index - 2] * \
-                     digit_list[index - 3]
+      temp_product = reduce(operator.mul, digit_list[index -1 : index + 1])
+    
     else:
-      temp_product = productOf5(digit_list, index)
+      temp_product = reduce(operator.mul, digit_list[index - 2 : index + 2])
 
     if temp_product > high_score:
         high_score = temp_product
 
     index += 1
 
-  print high_score
+  print(high_score)
