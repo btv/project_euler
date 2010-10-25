@@ -7,7 +7,7 @@ investigate_this = map digitToInt $ show 731671765313306249192251196744265747423
 investigate_length = length investigate_this
 
 productof5 index
-  | index == investigate_length - 4 = []
+  | index >= investigate_length - 4 = []
   | otherwise  = prod5 : productof5 (index + 1)
   where prod5 = product [ investigate_this !! y | y <- [index..(index + 4)]]
 
