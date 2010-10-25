@@ -22,10 +22,10 @@ if __name__ == "__main__":
     elif index == 1:
       temp_product = reduce(operator.mul, digit_list[index -1 : index + 3])
 
-    elif index == 999:
+    elif index == digit_list_length - 1:
       temp_product = reduce(operator.mul, digit_list[index -4 : index])
 
-    elif index == 998:
+    elif index == digit_list_length - 2:
       temp_product = reduce(operator.mul, digit_list[index -1 : index + 1])
 
     else:
