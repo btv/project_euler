@@ -27,10 +27,10 @@ if __name__ == "__main__":
 
     elif index == 999:
       temp_product = reduce(operator.mul, digit_list[index -4 : index])
-    
+
     elif index == 998:
       temp_product = reduce(operator.mul, digit_list[index -1 : index + 1])
-    
+
     else:
       temp_product = reduce(operator.mul, digit_list[index - 2 : index + 2])
 
