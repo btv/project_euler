@@ -24,7 +24,7 @@ if __name__ == "__main__":
     elif index == digit_list_length - 2:
       temp_product = reduce(operator.mul, digit_list[index - 3: index + 2])
     else:
-      temp_product =  reduce(operator.mul, digit_list[index -2 : index + 3])
+      temp_product = reduce(operator.mul, digit_list[index -2 : index + 3])
 
     if temp_product > high_score:
         high_score = temp_product
