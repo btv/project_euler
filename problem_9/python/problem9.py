@@ -1,48 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 python soltion for project euler problem #9.
 """
 
-import math
+print( [a*b*(1000 - b -a) for a in range(1,500+1) for b in range(a,500+1) \
+        if a * a + b * b == ((1000 -b -a) * (1000 - b - a))][0])
 
-def equal1000(a,b,c):
-  if a + b + c == 1000:
-    return True
-  else:
-    return False
-
-def pythagorianTriple(a,b):
-  """
-  if the square root of a^2 + b^2 mod'ed = 0, we have something.
-  """
-  temp_sqrt = math.sqrt(a * a + b * b)
-  if int(temp_sqrt % 1) == 0:
-    return (True, int(temp_sqrt))
-  else:
-    return (False, 0)
-
-
-def main():
-  count_left = 1
-  count_right = 1
-
-  flip = True
-
-  while count_right <= 500:
-    result = pythagorianTriple(count_left, count_right)
-    if result[0] == True:
-      if equal1000(count_left, count_right,result[1]) == True:
-        print "%d + %d + %d = 1000" % (count_left, count_right, result[1])
-        end = True
-
-    if flip == True:
-      count_right += 1
-      flip = flip ^ 1
-    else:
-      count_left += 1
-      flip = flip ^ 1
-
-
-
-if __name__ == "__main__":
-  main()

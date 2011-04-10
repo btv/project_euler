@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import math
 
@@ -13,7 +13,7 @@ def is_prime(divided):
   return True
 
 if __name__ == "__main__":
-  prime_list = [1,2]
+  prime_list = [2]
   count = 3
 
   while len(prime_list) < 10001:
@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     count += 2
 
-  print prime_list[-1]
+  print(prime_list[-1])
