@@ -1,5 +1,7 @@
 module Main where
 
+import Control.Parallel.Strategies
+
 factors count top_number
   | count >= top_number = []
   | zero_mod count = count : new_top: factors (count + 2) new_top
@@ -26,4 +28,4 @@ is_prime input = prime 3 input
 main :: IO ()
 main = print . snd . maximum $ zip y x
   where x = factors 3 600851475143
-        y = map is_prime x
+        y = parMap rwhnf  is_prime x
