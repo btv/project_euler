@@ -2,14 +2,19 @@ module Main where
 
 import Data.List
 
---sequence' :: (Num a) => a -> [a]
-sequence' a
-  | a == 1 = [1]
-  | even a == True = a: sequence' (round . fromIntegral $ div a 2)
-  | otherwise = a: sequence' (3 * a + 1)
+--NOTES: change from retuning the list to just the lengh,
+-- Also include the starting number.
+
+
+chain' :: Integer -> [Integer]
+chain' 1 = [1]
+chain' n
+  | n <= 0 = []
+  | even n = n : chain' (n `div` 2)
+  | odd n = n : chain' (n * 3 + 1)
 
 main :: IO ()
 main = do
-    let seqx = map sequence' [3,5..1000000]
+    let seqx = map chain' [3,5..1000000]
     let lengthx = map length seqx
     print . maximum $ zip lengthx seqx
