@@ -16,4 +16,4 @@ def is_prime(divided):
   return True
 
 if __name__ == "__main__":
-  print sum([2] + [x for x in range(3,2000000+1, +2) if is_prime(x)])
+  print sum([2] + [x for x in xrange(3,2000000+1, +2) if is_prime(x)])
