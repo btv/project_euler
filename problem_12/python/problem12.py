@@ -4,7 +4,7 @@ solution for problem 12 in python.
 """
 
 def get_divisors(number):
-  return len([ x for x in xrange(1,number+1) if number % x == 0])
+  return len([1, number] + [x for x in xrange(2, number) if number % x == 0])
 
 # shaving some computations using the problem as a guide
 triangle_num = 28

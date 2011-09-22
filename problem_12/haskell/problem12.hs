@@ -1,8 +1,6 @@
 --module Main where
 
---import Data.Char
-
-get_div_len number = length $ [ y | y <- [1..number] , number `mod` y == 0]
+get_div_len number = length $ [1,number] ++  [ y | y <- [2..(number - 1)] , number `mod` y == 0]
 
 --triangle num = sum(map digitToInt $ show num)
 
