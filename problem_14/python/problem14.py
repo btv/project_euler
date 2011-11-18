@@ -18,5 +18,5 @@ def sequence(number):
     return (count, number)
 
 if __name__ == "__main__":
-  print(max((sequence2(x) for x in xrange(5,100000+1))))
+  print(max((sequence(x) for x in xrange(5,100000+1))))
 
