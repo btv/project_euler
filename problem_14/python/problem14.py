@@ -1,20 +1,22 @@
 #!/usr/bin/python
 """Python solution for Project Euler problem #14."""
 
+from __future__ import print_function
+
 def sequence(number):
-  tmp_list = [number]
-  
-  while( number != 1):
-    if number % 2 == 0:
-      number /= 2
-    else:
-      number = (number * 3) + 1
+    t_num = number
+    count = 0
 
-    tmp_list.append(number)
+    while(t_num > 1):
+        if t_num % 2 == 0:
+            t_num /= 2
+        else:
+            t_num = (t_num * 3) + 1
 
-  return (len(tmp_list), tmp_list)
+        count += 1
 
+    return (count, number)
 
 if __name__ == "__main__":
-  print(max([sequence(x) for x in range(5,100000+1)]))
+  print(max((sequence2(x) for x in xrange(5,100000+1))))
 
