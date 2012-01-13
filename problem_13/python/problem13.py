@@ -2,6 +2,7 @@
 """
 code solution for project euler's problem #13 in python.
 """
+from __future__ import print_function
 
 def print_10(number):
     print(str(number)[0:10])

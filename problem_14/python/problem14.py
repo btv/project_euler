@@ -5,7 +5,7 @@ from __future__ import print_function
 
 def sequence(number):
     t_num = number
-    count = 0
+    count = 1
 
     while(t_num > 1):
         if t_num % 2 == 0:

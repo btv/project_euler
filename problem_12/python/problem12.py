@@ -1,17 +1,33 @@
 #!/usr/bin/python
+
 """
 solution for problem 12 in python.
 """
+import math
 
 def get_divisors(number):
-  return len([1, number] + [x for x in xrange(2, number) if number % x == 0])
+    tlist = []
+    for x in xrange(2, int(math.sqrt(number))):
+        d,r = divmod(number,x)
+        if r == 0:
+            tlist.append(x)
+            tlist.append(d)
 
-# shaving some computations using the problem as a guide
-triangle_num = 28
-iterator = 7
+    return len([1, number] + tlist)
 
-while get_divisors(triangle_num) <= 500:
-  iterator += 1
-  triangle_num += iterator
+def triangle_nums():
+    iterator = 7
+    num = 28
 
-print triangle_num
+    while True:
+        yield num
+        iterator += 1
+        num += iterator
+
+if __name__ == "__main__":
+    tn = triangle_nums()
+    for t in tn:
+        tl = get_divisors(t)
+        if tl > 500:
+            print "num: %d\ncount: %d" % (t,tl)
+            break
