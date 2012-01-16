@@ -19,4 +19,3 @@ def sequence(number):
 
 if __name__ == "__main__":
   print(max((sequence(x) for x in xrange(1,1000000+1))))
-
