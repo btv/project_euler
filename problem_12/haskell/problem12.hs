@@ -1,7 +1,9 @@
 module Main where
 
-get_div_len number = length $ [1,number] ++ [ y | y <- [2..(number - 1)] , number `rem` y == 0]
+get_div_len number = foldr (+) 0 [2 | x <- [1..x], number `mod` x == 0]
+    where x = toInteger . round . sqrt $ fromInteger number
 
 main :: IO()
 main = do
-  print . head $ filter (>= 500) [ get_div_len (x ^ 2)  | x <- [2..]]
+  print $ map (\x -> (get_div_len x ,x)) xs
+  where xs = map (\x -> sum [1..x]) [7..]
