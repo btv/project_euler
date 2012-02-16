@@ -3,10 +3,9 @@ module Main where
 import Control.Monad
 import Control.Monad.State
 
-type MyState = (Integer, Integer)
+type MyState = (Int, Int)
 s0 = (7, 28)
 
---tick :: State MyState Int
 tick = do
     (n,o) <- get
     let divs = getDivLen (n,o)
