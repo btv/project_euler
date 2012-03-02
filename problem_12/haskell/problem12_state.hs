@@ -1,3 +1,4 @@
+{-# LANGUAGE BangPatterns, UnboxedTuples #-}
 module Main where
 
 import Control.Monad
@@ -19,7 +20,7 @@ tick = do
             return o
 
 getDivLen :: MyState -> Int
-getDivLen (n,o) = foldl1 (+) [2 | x <- [1..x], o `mod` x == 0]
+getDivLen (!n, !o) = foldl1 (+) [2 | x <- [1..x], o `mod` x == 0]
     where x = round . sqrt $ fromIntegral o
 
 main :: IO ()
