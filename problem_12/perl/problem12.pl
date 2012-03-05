@@ -16,10 +16,7 @@ sub divisors
 
     while ($i <= $sq_n)
     {
-        if ($number % $i == 0)
-        {
-            $t += 2;
-        }
+        $t += 2 unless ($number % $i);
 
         $i += 1;
     }
