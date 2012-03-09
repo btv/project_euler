@@ -1,7 +1,6 @@
 #!/usr/bin/python
 """Python solution for Project Euler problem #14."""
 
-from __future__ import print_function
 from itertools import imap
 
 def sequence(number):
@@ -19,4 +18,4 @@ def sequence(number):
     return (count, number)
 
 if __name__ == "__main__":
-  print(max(imap(sequence, xrange(1,1000000+1))))
+  print max(imap(sequence, xrange(1,1000000+1)))
