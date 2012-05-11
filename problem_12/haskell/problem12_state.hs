@@ -1,12 +1,12 @@
+{-# LANGUAGE BangPatterns, UnboxedTuples #-}
 module Main where
 
 import Control.Monad
 import Control.Monad.State
 
-type MyState = (Integer, Integer)
+type MyState = (Int, Int)
 s0 = (7, 28)
 
---tick :: State MyState Int
 tick = do
     (n,o) <- get
     let divs = getDivLen (n,o)
@@ -20,7 +20,7 @@ tick = do
             return o
 
 getDivLen :: MyState -> Int
-getDivLen (n,o) = foldl1 (+) [2 | x <- [1..x], o `mod` x == 0]
+getDivLen (!n, !o) = foldl1 (+) [2 | x <- [1..x], o `mod` x == 0]
     where x = round . sqrt $ fromIntegral o
 
 main :: IO ()
