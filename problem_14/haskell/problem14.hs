@@ -1,20 +1,18 @@
-module Main where
 
-import Data.List
+ module Main where
 
---NOTES: change from retuning the list to just the lengh,
--- Also include the starting number.
+ import Data.Tuple
+ import Data.List (sortBy)
+ import Data.Function (on)
 
+ chain' :: Integer -> [Integer]
+ chain' 1 = [1]
+ chain' n
+   | n <= 0 = []
+   | even n = n : chain' (n `div` 2)
+   | odd n = n : chain' (n * 3 + 1)
 
-chain' :: Integer -> [Integer]
-chain' 1 = [1]
-chain' n
-  | n <= 0 = []
-  | even n = n : chain' (n `div` 2)
-  | odd n = n : chain' (n * 3 + 1)
-
-main :: IO ()
-main = do
-    let seqx = map chain' [3,5..1000000]
-    let lengthx = map length seqx
-    print . maximum $ zip lengthx seqx
+ main :: IO ()
+ main = do
+     let seqx = map (\x -> (x, length $ chain' x)) [999999,999997..3]
+     print . fst . head $ sortBy (flip compare `on` snd) seqx
