@@ -18,4 +18,4 @@ def sequence(number):
     return (count, number)
 
 if __name__ == "__main__":
-  print max(imap(sequence, xrange(1,1000000+1)))
+  print max(imap(sequence, xrange(999999,3,-2)))
