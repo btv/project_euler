@@ -1,18 +1,14 @@
-
  module Main where
-
  import Data.Tuple
- import Data.List (sortBy)
+ import Data.List (sortBy, iterate)
  import Data.Function (on)
 
- chain' :: Integer -> [Integer]
- chain' 1 = [1]
- chain' n
-   | n <= 0 = []
-   | even n = n : chain' (n `div` 2)
-   | odd n = n : chain' (n * 3 + 1)
+ chain' :: Integer -> Int
+ chain' n  
+     | n < 1 = 0
+     | otherwise = length $ (takeWhile ( > 1) $ iterate (\x -> if even x then x `div` 2 else x * 3 + 1) n) ++ [1]
 
  main :: IO ()
  main = do
-     let seqx = map (\x -> (x, length $ chain' x)) [999999,999997..3]
+     let seqx = map (\x -> (x, chain' x)) [999999,999997..3]
      print . fst . head $ sortBy (flip compare `on` snd) seqx
