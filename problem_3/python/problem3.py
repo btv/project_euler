@@ -22,10 +22,9 @@ def is_prime(divided):
         divisor += 2
     return True
 
-def main():
+if __name__ == "__main__":
   count = 3
   go_to = top_number
-
   first_list =[]
 
   while count <= go_to:
@@ -38,7 +37,3 @@ def main():
 
   second_list = map(is_prime, first_list)
   print "%s" % max(zip(second_list, first_list))[-1] 
-
-
-if __name__ == "__main__":
-  main()
