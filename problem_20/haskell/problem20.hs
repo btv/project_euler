@@ -11,4 +11,4 @@ numberToList = reverse . unfoldr (\x -> if x == 0
 
 main :: IO ()
 main = do
-       print $ sum $ numberToList (product [1..100])
+       print . sum . numberToList $ product [1..100]
