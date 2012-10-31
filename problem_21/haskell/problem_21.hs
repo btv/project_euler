@@ -1,11 +1,18 @@
 module Main where
 
-sumOfDivisors :: Int -> Int
-sumOfDivisors = sum . divisors
-  --divisors grabbed from 
-  -- http://stackoverflow.com/questions/1480563/making-a-list-of-divisors-in-haskell
-  where divisors n = [x | x <- [1..(n-1)], n `rem` x == 0]
+import Math.NumberTheory.Primes.Factorisation (divisors)
+import Data.Set (toList)
 
+sumOfDivisors :: Integer -> Integer
+sumOfDivisors 0 = 0
+sumOfDivisors num = sum . init . toList . divisors $ num
+
+isOK :: Integer -> Bool
+isOK x = if x /= y
+         then x == z
+         else False
+    where y = sumOfDivisors x
+          z = sumOfDivisors y
 
 main :: IO ()
-main = print $ sum [ x | x <- [1..9999], x == (sumOfDivisors $ sumOfDivisors x), x /= sumOfDivisors x]
+main = print . sum $ filter (isOK) [1..9999]
