@@ -30,6 +30,5 @@ if __name__ == "__main__":
                                                   o=ones[o]))
             except ValueError:
                     tot += len("{h}{o}".format(h= hundreds[h], o=ones[str(y)]))
-                    print("{h}{o}".format(h= hundreds[h], o=ones[str(y)]))
     tot += len('onethousand')
     print(tot)
