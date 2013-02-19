@@ -14,21 +14,20 @@ hundreds = {0: 0, 1: "onehundredand", 2: "twohundredand",
             3: "threehundredand", 4: "fourhundredand",
             5: "fivehundredand", 6: "sixhundredand",
             7: "sevenhundredand", 8: "eighthundredand",
-            9: "ninehundredand"
-           }
+            9: "ninehundredand" }
 
 if __name__ == "__main__":
     tot = 0
-    for h in range(10):
+    for h in xrange(10):
         for y in xrange(1,100):
             try:
                 t,o = tuple(str(y))
                 if t is '1':
                     tot += len("{h}{t}".format(h=hundreds[h], t=teens[t + o]))
                 else:
-                    tot += len("{h}{t}{o}".format(h = hundreds[h], t=tens[t],
+                    tot += len("{h}{t}{o}".format(h=hundreds[h], t=tens[t],
                                                   o=ones[o]))
             except ValueError:
-                    tot += len("{h}{o}".format(h= hundreds[h], o=ones[str(y)]))
+                    tot += len("{h}{o}".format(h=hundreds[h], o=ones[str(y)]))
     tot += len('onethousand')
     print tot
