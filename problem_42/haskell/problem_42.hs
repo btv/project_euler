@@ -7,7 +7,7 @@ import qualified Data.Text.IO as TI (readFile)
 import System.Environment (getArgs)
 
 wordSum :: T.Text -> Int
-wordSum x = sum $ map (\j -> (ord j) - 64) (T.unpack x)
+wordSum = sum . map (\j -> (ord j) - 64) . T.unpack
 
 buildWordList :: FilePath -> IO [[T.Text]]
 buildWordList filename = TI.readFile filename >>=
