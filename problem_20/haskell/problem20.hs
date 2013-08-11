@@ -10,5 +10,4 @@ numberToList = reverse . unfoldr (\x -> if x == 0
                                         else let (a,b) = x `quotRem` 10 in Just (b,a))
 
 main :: IO ()
-main = do
-       print . sum . numberToList $ product [1..100]
+main = print . sum . numberToList $ product [1..100]
