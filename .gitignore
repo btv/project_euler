@@ -2,6 +2,8 @@
 *.hi
 *.o
 
+# any erlang beam files
+*.beam
 # any java class files
 *.class
 
