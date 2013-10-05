@@ -1,5 +1,6 @@
 module Main where
 
+--cabal install arithmoi
 import Math.NumberTheory.Primes.Factorisation (divisors)
 import Data.Set (toList)
 
