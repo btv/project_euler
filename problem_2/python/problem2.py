@@ -13,10 +13,7 @@ def fibinaci_list( in_list, input1, input2):
       flip = True 
 
 def even(n):
-  if n % 2 == 0:
-    return True
-  else:
-    return False
+  return n % 2 == 0
 
 
 def main():
